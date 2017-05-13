@@ -13,15 +13,16 @@
   <body ng-controller="SearchAndStoreController as sasc">
     <div class="jumbotron">
       <h1>Movie Search and Store</h1>
-    </div>
-    <div>
       <input ng-model="sasc.searchIn" type="text" placeholder="search for movie">
       <button ng-click="sasc.searchOMDB()" type="button" class="btn" name="searchbutton">Search</button>
-      <!-- return OMDB results with favorites button -->
-      <div ng-repeat="item in sasc.display">
-        {{item.Title}}
-        {{item.Year}}
+    </div>
+    <div>
+            <!-- return OMDB results with favorites button -->
+      <div id="outputDiv" class="col-sm-3" ng-repeat="item in sasc.display">
         <img ng-src="{{item.Poster}}">
+        <p>{{item.Title}}</p>
+        <p>{{item.Year}}</p>
+        <button ng-click="sasc.addFavorite()" type="button" class="btn">Favorite!</button>
     </div>
     </div>
     <div>

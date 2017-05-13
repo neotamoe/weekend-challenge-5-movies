@@ -17,5 +17,8 @@ myApp.controller('SearchAndStoreController', function($http){
     });  // end then
   };  // end searchWord
 
+  vm.addFavorite = function(){
+    console.log('add favorite button clicked');
+  };
 
 });
