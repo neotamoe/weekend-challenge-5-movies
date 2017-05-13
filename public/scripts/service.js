@@ -1,4 +1,4 @@
-// myApp.service('Search', function($http){
+// myApp.service('Search', function(){
 //
 // });  // end Search service
 //

@@ -18,11 +18,11 @@
     </div>
     <div>
             <!-- return OMDB results with favorites button -->
-      <div id="outputDiv" class="col-sm-3" ng-repeat="item in sasc.display">
+      <div class="outputDiv col-sm-3" ng-repeat="item in sasc.display" ng-attr-id="{{'display-'+ $index}}">
         <img ng-src="{{item.Poster}}">
-        <p>{{item.Title}}</p>
-        <p>{{item.Year}}</p>
-        <button ng-click="sasc.addFavorite()" type="button" class="btn">Favorite!</button>
+        <p>{{item.Title}}<br>
+        {{item.Year}}<br>
+        <button ng-click="sasc.addFavorite(item.Title, item.Year, item.Poster)" type="button" class="btn">Favorite!</button></p>
     </div>
     </div>
     <div>

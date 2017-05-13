@@ -4,6 +4,7 @@ var app = express();
 var path = require ('path');
 var bodyParser = require ('body-parser');
 var mongoDB = require('./modules/db');
+var movieRoutes = require('./routes/movies');
 
 
 // globals
@@ -13,6 +14,7 @@ var port = process.env.PORT || 3579;
 app.use( bodyParser.urlencoded ( { extended:true } ) );
 app.use( bodyParser.json() );
 app.use( express.static ('public') );
+app.use( '/savemovie', movieRoutes);
 
 // base route
 app.get('/', function(req,res){
