@@ -7,10 +7,25 @@
     <script src="vendors/angular-route.min.js" charset="utf-8"></script>
     <script src="scripts/script.js" charset="utf-8"></script>
     <script src="scripts/service.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body ng-controller="SearchAndStoreController as sasc">
-    {{sasm.test}}
+    <div class="jumbotron">
+      <h1>Movie Search and Store</h1>
+    </div>
+    <div>
+      <input ng-model="sasc.searchIn" type="text" placeholder="search for movie">
+      <button ng-click="sasc.searchOMDB()" type="button" class="btn" name="searchbutton">Search</button>
+      <!-- return OMDB results with favorites button -->
+      <div ng-repeat="item in sasc.display">
+        {{item.Title}}
+        {{item.Year}}
+        <img ng-src="{{item.Poster}}">
+    </div>
+    </div>
+    <div>
+      <!-- display favorite movies from db -->
+    </div>
   </body>
 </html>
