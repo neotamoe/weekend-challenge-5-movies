@@ -15,6 +15,7 @@ app.use( bodyParser.urlencoded ( { extended:true } ) );
 app.use( bodyParser.json() );
 app.use( express.static ('public') );
 app.use( '/savemovie', movieRoutes);
+app.use( '/savefaves', movieRoutes);
 
 // base route
 app.get('/', function(req,res){

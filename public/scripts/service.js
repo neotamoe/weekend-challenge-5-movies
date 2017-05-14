@@ -1,7 +1,15 @@
-// myApp.service('Search', function(){
-//
-// });  // end Search service
-//
+myApp.service('DatabaseDisplay', function($http){
+  this.getFaves = function(){
+    return $http({
+      type: 'GET',
+      url: '/savefaves/'
+    }).then(function(response){
+      console.log('response.data-->', response.data);
+      return response.data;
+    });
+  };  // end getFaves
+});  // end Search service
+
 
 
 

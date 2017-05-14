@@ -1,9 +1,17 @@
 var myApp = angular.module('myApp', []);
 
-myApp.controller('SearchAndStoreController', function($http){
+myApp.controller('SearchAndStoreController', function($http, DatabaseDisplay){
   console.log('angular sourced');
 
   var vm =  this;
+
+  vm.showFaves = function(){
+    DatabaseDisplay.getFaves().then(function(data){
+      console.log('data-->',data);
+      console.log('showFaves-->', vm.showFaves);
+      vm.favorites = data;
+    });
+  };
 
   vm.searchOMDB = function(){
     $http({
@@ -35,5 +43,7 @@ myApp.controller('SearchAndStoreController', function($http){
       // add function for displaying favorites on DOM (getFaves)
     });  // end $http
   };  // end addFavorite
+
+
 
 }); // end controller

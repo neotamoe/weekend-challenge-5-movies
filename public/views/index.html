@@ -10,23 +10,34 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
-  <body ng-controller="SearchAndStoreController as sasc">
+  <body ng-controller="SearchAndStoreController as sasc" ng-init="sasc.showFaves()">
     <div class="jumbotron">
       <h1>Movie Search and Store</h1>
-      <input ng-model="sasc.searchIn" type="text" placeholder="search for movie">
-      <button ng-click="sasc.searchOMDB()" type="button" class="btn" name="searchbutton">Search</button>
     </div>
-    <div>
-            <!-- return OMDB results with favorites button -->
-      <div class="outputDiv col-sm-3" ng-repeat="item in sasc.display" ng-attr-id="{{'display-'+ $index}}">
-        <img ng-src="{{item.Poster}}">
-        <p>{{item.Title}}<br>
-        {{item.Year}}<br>
-        <button ng-click="sasc.addFavorite(item.Title, item.Year, item.Poster)" type="button" class="btn">Favorite!</button></p>
-    </div>
-    </div>
-    <div>
-      <!-- display favorite movies from db -->
+    <div class="container">
+      <div id="outputDivContainer"> <!-- holds OMDB results -->
+        <h1>Search for Flicks to Add to Your Collection</h1>
+        <input ng-model="sasc.searchIn" type="text" placeholder="search for movie">
+        <button ng-click="sasc.searchOMDB()" type="button" class="btn" name="searchbutton">Search</button>
+      </div>
+      <div class="row">
+        <div class="outputDiv col-sm-3 text-center" ng-repeat="item in sasc.display" ng-attr-id="{{'display-'+ $index}}">
+          <img ng-src="{{item.Poster}}">
+          <p>{{item.Title}}<br>
+          {{item.Year}}<br>
+          <button ng-click="sasc.addFavorite(item.Title, item.Year, item.Poster)" type="button" class="btn favBtn">&#128153; Favorite!</button></p>
+        </div>
+      </div>
+      <div> <!-- displays favorite movies from db -->
+        <h1>&#128153; Your Favorite Flicks...</h1>
+      </div>
+      <div class="row">
+        <div class="favesDiv col-sm-3 text-center" ng-repeat="item in sasc.favorites">
+          <img ng-src="{{item.poster}}">
+          <p>{{item.title}}<br>
+          {{item.year}}<br>
+        </div>
+      </div>
     </div>
   </body>
 </html>
