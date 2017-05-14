@@ -1,4 +1,22 @@
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngRoute']);
+
+myApp.config(function($routeProvider, $locationProvider) {
+  $routeProvider.when('/', {
+    templateUrl: '/views/pages/home.html',
+    controller: 'SearchAndStoreController as sasc'
+  }).when('/search', {
+    templateUrl: '/views/pages/search.html',
+    controller: 'SearchAndStoreController as sasc'
+  }).when('/favorites', {
+    templateUrl: '/views/pages/favorites.html',
+    controller: 'SearchAndStoreController as sasc'
+  }).when('/home', {
+    templateUrl: '/views/pages/home.html',
+    controller: 'SearchAndStoreController as sasc'
+  }).otherwise({ redirectTo: '/'});
+
+  $locationProvider.html5Mode(true);
+});
 
 myApp.controller('SearchAndStoreController', function($http, DatabaseDisplay){
   console.log('angular sourced');
@@ -40,7 +58,8 @@ myApp.controller('SearchAndStoreController', function($http, DatabaseDisplay){
       data: objectToSend
     }).then(function(response){
       console.log('back from server with response-->', response);
-      // add function for displaying favorites on DOM (getFaves)
+      swal(title + " saved to favorites");
+      vm.showFaves();
     });  // end $http
   };  // end addFavorite
 

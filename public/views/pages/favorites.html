@@ -1,0 +1,10 @@
+<div ng-init="sasc.showFaves()">
+  <h1>&#128153; Your Favorite Flicks...</h1>
+</div>
+<div class="row"> <!-- displays favorite movies from db -->
+  <div class="favesDiv col-sm-2 text-center" ng-repeat="item in sasc.favorites">
+    <img ng-src="{{item.poster}}">
+    <p>{{item.title}}<br>
+    {{item.year}}<br>
+  </div>
+</div>

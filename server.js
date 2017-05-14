@@ -18,7 +18,7 @@ app.use( '/savemovie', movieRoutes);
 app.use( '/savefaves', movieRoutes);
 
 // base route
-app.get('/', function(req,res){
+app.get('/*', function(req,res){
   console.log('base route hit');
   res.sendFile(path.resolve('public/views/index.html'));
 });

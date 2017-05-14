@@ -6,6 +6,35 @@ body{
   background-color: #2eb8b8;
 }
 
+h1{
+  text-align: center;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: ivory;
+}
+
+li{
+  /*float: left;*/
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+}
+
+li a:hover{
+  background-color: teal;
+}
+
 img {
   width: auto;
   height: 200px;
