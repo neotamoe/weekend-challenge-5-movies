@@ -19,8 +19,8 @@ ul{
 }
 
 li{
-  /*float: left;*/
-  display: inline-block;
+  float: left;
+  width: 20%;
 }
 
 li a {
@@ -32,8 +32,9 @@ li a {
 }
 
 li a:hover{
-  background-color: teal;
+  background-color: #2eb8b8;
 }
+
 
 img {
   width: auto;

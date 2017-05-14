@@ -8,8 +8,18 @@ myApp.service('DatabaseDisplay', function($http){
       return response.data;
     });
   };  // end getFaves
-});  // end Search service
 
+  this.deleteFave = function(id){
+    console.log('deleteFave id to remove-->', id);
+    return $http({
+      type: 'DELETE',
+      url: '/deleteFave/:' + id
+    }).then(function(response){
+      console.log('$http delete response-->', response);
+      return response.status;
+    });
+  };
+});  // end DatabaseDisplay service
 
 
 

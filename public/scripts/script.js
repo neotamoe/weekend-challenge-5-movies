@@ -25,10 +25,16 @@ myApp.controller('SearchAndStoreController', function($http, DatabaseDisplay){
 
   vm.showFaves = function(){
     DatabaseDisplay.getFaves().then(function(data){
-      console.log('data-->',data);
-      console.log('showFaves-->', vm.showFaves);
+      console.log('vm.favorites/data-->',data);
       vm.favorites = data;
     });
+  };
+
+  vm.deleteFavorite = function(id){
+    console.log('delete button clicked');
+    console.log('id-->', id);
+    DatabaseDisplay.deleteFave(id);
+    vm.showFaves();
   };
 
   vm.searchOMDB = function(){
@@ -43,13 +49,14 @@ myApp.controller('SearchAndStoreController', function($http, DatabaseDisplay){
     });  // end then
   };  // end searchWord
 
-  vm.addFavorite = function(title, year, poster){
+  vm.addFavorite = function(movie){
     console.log('add favorite button clicked');
-    console.log('title:', title, 'poster:', poster,'year:', year);
+    console.log('title:', movie.Title, 'poster:', movie.Poster,'year:', movie.Year,'imdbID:', movie.imdbID);
     var objectToSend = {
-      title: title,
-      year: year,
-      poster: poster
+      title: movie.Title,
+      year: movie.Year,
+      poster: movie.Poster,
+      imdbID: movie.imdbID
     };
     console.log('objectToSend-->', objectToSend);
     $http({
@@ -58,11 +65,8 @@ myApp.controller('SearchAndStoreController', function($http, DatabaseDisplay){
       data: objectToSend
     }).then(function(response){
       console.log('back from server with response-->', response);
-      swal(title + " saved to favorites");
+      swal(movie.Title + " saved to favorites");
       vm.showFaves();
     });  // end $http
   };  // end addFavorite
-
-
-
-}); // end controller
+}); // end SearchAndStoreController
