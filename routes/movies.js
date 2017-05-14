@@ -15,17 +15,14 @@ router.post('/', function (req, res){
 
 router.get('/', function(req,res){
   console.log('in GET to get favorites from db');
-  console.log('in GET, req.body-->', req.body);
   faveflicksModel.faveflicks.find().then(function(data){
     // console.log('data-->', data);
     res.send(data);
   });
 });
 
-router.delete('/', function(req,res){
-  console.log('in DELETE to remove movie from db');
-  console.log('in DELETE req.body-->', req.body);
-  console.log('in DELETE req.params.id-->', req.params.id);
+router.delete('/:id/', function(req,res){
+  console.log('in DELETE to remove movie from DB: req.params.id-->', req.params.id);
   faveflicksModel.faveflicks.remove({_id: req.params.id}).then(function(){
     console.log('removed movie with id', req.params.id, 'from database');
     res.sendStatus(200);

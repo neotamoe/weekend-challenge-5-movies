@@ -16,7 +16,7 @@ app.use( bodyParser.json() );
 app.use( express.static ('public') );
 app.use( '/savemovie', movieRoutes);
 app.use( '/savefaves', movieRoutes);
-app.use( '/deleteFave/', movieRoutes);
+app.use( '/deleteFave', movieRoutes);
 
 // base route
 app.get('/*', function(req,res){
