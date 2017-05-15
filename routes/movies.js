@@ -3,6 +3,7 @@ var router = express.Router();
 var mongoose = require ('mongoose');
 var faveflicksModel = require ('../models/models');
 
+// POST for adding movies to DB
 router.post('/', function (req, res){
   console.log('in POST to add favorite movie');
   console.log('req.body-->', req.body);
@@ -13,6 +14,7 @@ router.post('/', function (req, res){
   });  // end newMovie save
 });  // end POST
 
+// GET to get favorites from DB
 router.get('/', function(req,res){
   console.log('in GET to get favorites from db');
   faveflicksModel.faveflicks.find().then(function(data){
@@ -21,6 +23,7 @@ router.get('/', function(req,res){
   });
 });
 
+// DELETE to delete a movie from favorites
 router.delete('/:id/', function(req,res){
   console.log('in DELETE to remove movie from DB: req.params.id-->', req.params.id);
   faveflicksModel.faveflicks.remove({_id: req.params.id}).then(function(){
