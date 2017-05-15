@@ -18,13 +18,13 @@ if(process.env.MONGODB_URI !== undefined) {
 // var mongoDB = mongoose.connect('mongodb://heroku_lq2rhd4r:d0842t40gdi95sjjpfnvhsqgn0@ds139761.mlab.com:39761/heroku_lq2rhd4r').connection;
 var mongoDB = mongoose.connect(databaseURI);
 
-
-mongoDB.on ('error', function(err){
-  console.log('mongoDB error:', err);
-}); // end on error
-
-mongoDB.once('open', function(){
-  console.log('mongoDB connection open');
-});  // end once open
+// these didn't work once if/else above was added
+// mongoDB.on('error', function(err){
+//   console.log('mongoDB error:', err);
+// }); // end on error
+//
+// mongoDB.once('open', function(){
+//   console.log('mongoDB connection open');
+// });  // end once open
 
 module.exports = mongoDB;
