@@ -1,5 +1,7 @@
-myApp.service('DatabaseDisplay', function($http){
-  this.getFaves = function(){
+myApp.service('StoreService', function($http){
+  var self = this;
+
+  self.getFaves = function(){
     return $http({
       method: 'GET',
       url: '/savefaves/'
@@ -8,9 +10,9 @@ myApp.service('DatabaseDisplay', function($http){
     });
   };  // end getFaves
 
-  this.deleteFave = function(id){
+  self.deleteFave = function(id){
     console.log('deleteFave id to remove-->', id);
-    $http({
+    return $http({
       method: 'DELETE',
       url: '/deleteFave/' + id,
     }).then(function(response){
