@@ -18,12 +18,7 @@ myApp.config(function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 });
 
-// HomeController for home/index page
-myApp.controller('HomeController', function(){
-  console.log('angular sourced');
-  var vm =  this;
-  vm.welcome = "Welcome!";
-});
+
 
 // main controller for search and favorites page
 myApp.controller('SearchAndStoreController', function($http, DatabaseDisplay){
