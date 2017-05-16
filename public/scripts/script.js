@@ -7,7 +7,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     controller: 'HomeController as hc'
   }).when('/search', {
     templateUrl: '/views/pages/search.html',
-    controller: 'SearchAndStoreController as sasc'
+    controller: 'SearchController as sc'
   }).when('/favorites', {
     templateUrl: '/views/pages/favorites.html',
     controller: 'SearchAndStoreController as sasc'
@@ -40,35 +40,35 @@ myApp.controller('SearchAndStoreController', function($http, DatabaseDisplay){
     vm.showFaves();
   };  // end deleteFavorite
 
-  vm.searchOMDB = function(){
-    $http({
-      method: 'GET',
-      url: 'http://www.omdbapi.com/?s='+ vm.searchIn,
-    }).then(function(response){
-      vm.display = response.data.Search;
-    });
-  };  // end searchOMDB
+  // vm.searchOMDB = function(){
+  //   $http({
+  //     method: 'GET',
+  //     url: 'http://www.omdbapi.com/?s='+ vm.searchIn,
+  //   }).then(function(response){
+  //     vm.display = response.data.Search;
+  //   });
+  // };  // end searchOMDB
 
-  vm.addFavorite = function(movie){
-    console.log('add favorite button clicked');
-    console.log('title:', movie.Title, 'poster:', movie.Poster,'year:', movie.Year);
-    var objectToSend = {
-      title: movie.Title,
-      year: movie.Year,
-      poster: movie.Poster,
-    };
-    $http({
-      method: 'POST',
-      url: '/savemovie/',
-      data: objectToSend
-    }).then(function(response){
-      swal({
-        title: movie.Title,
-        text: "saved to favorites",
-        timer: 1500,
-        showConfirmButton: false
-      });
-      vm.showFaves();
-    });  // end $http
-  };  // end addFavorite
+  // vm.addFavorite = function(movie){
+  //   console.log('add favorite button clicked');
+  //   console.log('title:', movie.Title, 'poster:', movie.Poster,'year:', movie.Year);
+  //   var objectToSend = {
+  //     title: movie.Title,
+  //     year: movie.Year,
+  //     poster: movie.Poster,
+  //   };
+  //   $http({
+  //     method: 'POST',
+  //     url: '/savemovie/',
+  //     data: objectToSend
+  //   }).then(function(response){
+  //     swal({
+  //       title: movie.Title,
+  //       text: "saved to favorites",
+  //       timer: 1500,
+  //       showConfirmButton: false
+  //     });
+  //     vm.showFaves();
+  //   });  // end $http
+  // };  // end addFavorite
 }); // end SearchAndStoreController

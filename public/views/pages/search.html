@@ -1,13 +1,13 @@
     <div id="outputDivContainer">
       <h2>Search for Flicks to Add to Your Collection</h2>
-      <input ng-model="sasc.searchIn" type="text" placeholder="search for movie">
-      <button ng-click="sasc.searchOMDB()" type="button" class="btn" name="searchbutton">Search</button>
+      <input ng-model="sc.searchIn" type="text" placeholder="search for movie">
+      <button ng-click="sc.searchOMDB(sc.searchIn)" type="button" class="btn" name="searchbutton">Search</button>
     </div>
     <div class="row"> <!-- holds OMDB results -->
-      <div class="outputDiv col-sm-2 text-center" ng-repeat="item in sasc.display" ng-attr-id="{{'display-'+ $index}}">
+      <div class="outputDiv col-sm-2 text-center" ng-repeat="item in sc.display" ng-attr-id="{{'display-'+ $index}}">
         <img ng-src="{{item.Poster}}">
         <p>{{item.Title}}<br>
         {{item.Year}}<br>
-        <button ng-click="sasc.addFavorite(item)" type="button" class="btn favBtn">&#128153; Favorite!</button></p>
+        <button ng-click="sc.addFavorite(item)" type="button" class="btn favBtn">&#128153; Favorite!</button></p>
       </div>
     </div>
