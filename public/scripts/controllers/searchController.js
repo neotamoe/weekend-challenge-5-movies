@@ -20,6 +20,12 @@ myApp.controller('SearchController', function($http, SearchService){
     console.log('objectToSend:', objectToSend);
     SearchService.addFavorite(objectToSend).then(function(status){
       console.log('status:', status);
+      swal({
+        title: movie.Title,
+        text: "saved to favorites",
+        timer: 1500,
+        showConfirmButton: false
+      });
     });
     // vm.showFaves();
   };  // end addFavorite
