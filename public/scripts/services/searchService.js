@@ -10,15 +10,4 @@ myApp.service('SearchService', function($http){
     });
   };  // end searchOMDB
 
-self.addFavorite = function(objectToSend){
-  return $http({
-    method: 'POST',
-    url: '/savemovie/',
-    data: objectToSend
-  }).then(function(response){
-      console.log('response-->', response);
-      return response.data;
-    });  // end then
-  };  // end addFavorite
-
 });  // end DatabaseDisplay service

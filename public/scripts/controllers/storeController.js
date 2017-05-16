@@ -20,4 +20,26 @@ myApp.controller('StoreController', function($http, StoreService){
       vm.showFaves();
     });
   };  // end deleteFavorite
+
+  vm.addFavorite = function(movie){
+    console.log('add favorite button clicked');
+    console.log('title:', movie.Title, 'poster:', movie.Poster,'year:', movie.Year);
+    var objectToSend = {
+      title: movie.Title,
+      year: movie.Year,
+      poster: movie.Poster,
+    };
+    console.log('objectToSend:', objectToSend);
+    SearchService.addFavorite(objectToSend).then(function(status){
+      console.log('status:', status);
+      swal({
+        title: movie.Title,
+        text: "saved to favorites",
+        timer: 1500,
+        showConfirmButton: false
+      });
+      showFaves();
+    });
+  };  // end addFavorite
+
 });
