@@ -10,4 +10,6 @@ myApp.service('SearchService', function($http){
     });
   };  // end searchOMDB
 
+
+
 });  // end DatabaseDisplay service
