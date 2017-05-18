@@ -5,7 +5,7 @@ myApp.controller('StoreController', function($http, SearchService, StoreService)
 
   vm.showFaves = function(){
     StoreService.getFaves().then(function(data){
-      return vm.favorites = data;
+      vm.favorites = data;
     });
   };  // end showFaves
 
@@ -21,6 +21,7 @@ myApp.controller('StoreController', function($http, SearchService, StoreService)
     });
   };  // end deleteFavorite
 
+  // moved this function to searchController.js  
   // vm.addFavorite = function(movie){
   //   console.log('add favorite button clicked');
   //   console.log('title:', movie.Title, 'poster:', movie.Poster,'year:', movie.Year);

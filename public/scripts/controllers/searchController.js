@@ -24,7 +24,7 @@ myApp.controller('SearchController', ['$http', 'SearchService', 'StoreService', 
       swal({
         title: movie.Title,
         text: "saved to favorites",
-        timer: 1500,
+        timer: 1200,
         showConfirmButton: false
       });
       vm.showFaves();
