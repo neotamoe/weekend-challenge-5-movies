@@ -1,11 +1,11 @@
-<div ng-init="sasc.showFaves()">
+<div>
   <h2>&#128153; Your Favorite Flicks...</h2>
 </div>
 <div class="row"> <!-- displays favorite movies from db -->
-  <div class="favesDiv col-sm-2 text-center" ng-repeat="item in sasc.favorites">
+  <div class="favesDiv col-sm-2 text-center" ng-repeat="item in stc.favorites">
     <img ng-src="{{item.poster}}">
     <p>{{item.title}}<br>
     {{item.year}}<br>
-    <button ng-click="sasc.deleteFavorite(item._id)" type="button" class="btn favBtn">&#10060; Delete</button></p>
+    <button ng-click="stc.deleteFavorite(item._id)" type="button" class="btn favBtn">&#10060; Delete</button></p>
   </div>
 </div>

@@ -1,32 +1,23 @@
-Welcome to your 5th Weekend Challenge!
-======================================
+Weekend Challenge 5 - OMDB Search and Store Favorite Movies
+===========================================================
 
-For this challenge, you will be working with Angular and the OMDB API to build an application that can search movies, and then a user can store their favorites!
+This application is a full stack web application to find movies from the OMDB (Open Movie Database) and save them to your favorites list.  **Note:** This application was made when OMDB API was free to use and is no longer functional.  Because of the changes at OMDB, the application no longer searches.  The application still displays favorite movies and those movies can be deleted.  Prior to changes at OMDB, a user could search for a movie using a word or words and would be returned movies to choose from.  User could select a movie as a favorite and it would be saved on the favorites page.
 
-Base Mode
----------
-Your application will need to be built from the ground up using Mongo, Angular, Node, Express, and Bootstrap. The requirements of the application are:
+This project was built over a weekend.
 
-There should be two views to the application, one side that searches and displays movie information made available from OMDB. This should be accomplished by having an entry field for the search string, then a submit button that sends the information to OMDB.
+Online Hosting
+-----------------
 
-When the API returns the response, the response should be data bound between an object and the response so that the search information appears as soon as the response returns from the API.
+The application is hosted at https://search-and-store-fave-movies.herokuapp.com/
 
-Use the OMDB Search parameter s to bring back more than one title:
+Built With
+----------
 
-http://www.omdbapi.com/?s=<user search string>
+* MEAN Stack (MongoDB, Express, AngularJS, Node.js)
+* Angular Route
+* Mongoose
+* Bootstrap
+* Sweet Alert
+* Hosted on Heroku
 
-You MUST use an Angular service to send the API call ($http).
-
-The information that is returned from the API will be a movie object. You must display some of the movie information on the DOM in a meaningful way. Additionally, you must have an 'add to favorites' button on those results.
-
-When the 'add to favorites' button is clicked, store the favorite in a Mongo Database.
-
-The other view should display the favorite movies selected by the user.
-
-Hard Mode
----------
-Add the ability to remove a movie from the Mongo Database, and ensure that the favorites view updates as well.
-
-Pro Mode
---------
-Host the application on Heroku and mLabs. No need to do a data dump of an existing database. This isn't something we have covered in class yet, but if you are curious here is a walk through: https://docs.google.com/document/d/1Fz9O6Zv86eM-NARZwQKgVsX_5WNFYMop3TzI9g7LaWc/edit?usp=sharing
+Application demonstrates use of modules, services and routes.  SweetAlert was independently added beyond the requirement of the assignment.
