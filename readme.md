@@ -5,10 +5,26 @@ This application is a full stack web application to find movies from the OMDB (O
 
 This project was built over a weekend.
 
+Getting Started
+---------------
+
+**NOTE** The project will open with no saved movies and the API does not have a key due to changes made after this project was created.  
+
+* Clone the repo to your own computer/repository.
+* From your terminal/command line, navigate to the project folder and type `npm install`.
+* Run the program by typing `npm start` in terminal/command line.
+* Open the program in your browser at http://localhost:3579
+
+
 Online Hosting
 -----------------
 
 The application is hosted at https://search-and-store-fave-movies.herokuapp.com/
+
+Screenshot of Stored Favorite Movies View
+-----------------------------------------
+
+![image](<img width="724" alt="movieapi" src="https://user-images.githubusercontent.com/25421749/28001210-8c58ab36-64f0-11e7-8808-471a998bcc8f.png">)
 
 Built With
 ----------
