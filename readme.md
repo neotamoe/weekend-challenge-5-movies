@@ -21,10 +21,6 @@ Online Hosting
 
 The application is hosted at https://search-and-store-fave-movies.herokuapp.com/
 
-Screenshot of Stored Favorite Movies View
------------------------------------------
-
-![image](https://user-images.githubusercontent.com/25421749/28001210-8c58ab36-64f0-11e7-8808-471a998bcc8f.png")
 
 Built With
 ----------
